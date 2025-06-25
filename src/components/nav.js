@@ -1,32 +1,53 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { useContext } from "react";
-import { ShopContext } from "../context/shopContext"; 
-import './nav.css';
+import { useContext, useState } from "react";
+import { ShopContext } from "../context/shopContext";
+import "./nav.css";
 
-const Nav = () => {
+const Nav = ({ onSearch }) => {
   const { cartItems } = useContext(ShopContext);
+  const [searchTerm, setSearchTerm] = useState("");
+
   const itemCount = cartItems.reduce((prev, current) => {
     return prev + current.count;
   }, 0);
+
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+    console.log("Search term:", value);
+    onSearch(value); // Notify parent
+  };
+
   return (
     <div className="navbar navbar-dark bg-dark navbar-expand-lg">
-      <div className="container">
+      <div className="container d-flex justify-content-between align-items-center">
         <a className="navbar-brand" href="#">
-          ata codding online shop
+          ata kaamkaar codding online shop
         </a>
-        <ul className="navbar-nav">
-          <li className="nav-item">
+        <form className="d-flex ms-auto me-2" role="search">
+          <input
+            type="search"
+            placeholder="Search products..."
+            className="form-control"
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
+        </form>
+
+        <ul className="navbar-nav d-flex flex-row">
+          <li className="nav-item me-3">
             <Link to="/" className="nav-link">
-              {" "}
               Shop
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/cart" className="nav-link">
               <FontAwesomeIcon icon={faShoppingCart} />
-              {itemCount > 0 && <span className="cart-items-count ">{itemCount}</span>}
+              {itemCount > 0 && (
+                <span className="cart-items-count">{itemCount}</span>
+              )}
             </Link>
           </li>
         </ul>
@@ -34,4 +55,5 @@ const Nav = () => {
     </div>
   );
 };
+
 export default Nav;
