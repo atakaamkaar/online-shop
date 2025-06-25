@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/online-shop/static/css/main.e4901fd7.css",
-    "main.js": "/online-shop/static/js/main.d5297c40.js",
+    "main.js": "/online-shop/static/js/main.e1cb5661.js",
     "static/media/camera.png": "/online-shop/static/media/camera.b8376030cdbdc6c34f26.png",
     "static/media/laptop.jpg": "/online-shop/static/media/laptop.e4a99d512aea7ede990f.jpg",
     "static/media/denim.jpg": "/online-shop/static/media/denim.9868c4f4ce3a0f25ac83.jpg",
@@ -9,10 +9,10 @@
     "static/media/shoes.jpg": "/online-shop/static/media/shoes.c801f92a8405b33ef13e.jpg",
     "index.html": "/online-shop/index.html",
     "main.e4901fd7.css.map": "/online-shop/static/css/main.e4901fd7.css.map",
-    "main.d5297c40.js.map": "/online-shop/static/js/main.d5297c40.js.map"
+    "main.e1cb5661.js.map": "/online-shop/static/js/main.e1cb5661.js.map"
   },
   "entrypoints": [
     "static/css/main.e4901fd7.css",
-    "static/js/main.d5297c40.js"
+    "static/js/main.e1cb5661.js"
   ]
 }
